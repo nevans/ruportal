@@ -2,9 +2,9 @@ class CreateReports < Sequel::Migration
   def up
     create_table :reports do
       primary_key :id
-      String :name
-      Text :sql_code
-      Text :ruby_code
+      String :name, :null => false
+      Text :code, :null => false
+      String :code_type, :default => :sql, :null => false
     end
   end
 

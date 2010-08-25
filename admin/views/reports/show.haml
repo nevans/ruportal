@@ -1,8 +1,10 @@
 .block
   .secondary-navigation
     %ul.wat-cf
-      %li.first.active=link_to pat(:list), url(:accounts, :index)
-      %li=link_to pat(:new), url(:accounts, :new)
+      %li.first=link_to pat(:list), url(:reports, :index)
+      %li=link_to pat(:new), url(:reports, :new)
+      %li=link_to pat(:edit), url(:reports, :edit, :id => @report.id)
+      %li.active=link_to pat(:show), url(:reports, :show, :id => @report.id)
   .content
     %h2.title= @report.name
     -unless @report.empty?
@@ -15,8 +17,5 @@
             %tr
               - @report.columns.each do |col|
                 %td=h row[col]
-
-        .actions-bar.wat-cf
-          .actions="&nbsp;"
 
 -content_for :sidebar, partial("base/sidebar")

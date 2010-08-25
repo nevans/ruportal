@@ -4,6 +4,7 @@
       %li.first=link_to pat(:list), url(:reports, :index)
       %li=link_to pat(:new), url(:reports, :new)
       %li.active=link_to pat(:edit), url(:reports, :edit, :id => @report.id)
+      %li=link_to pat(:show), url(:reports, :show, :id => @report.id)
   .content
     %h2.title
       =pat(:edit)

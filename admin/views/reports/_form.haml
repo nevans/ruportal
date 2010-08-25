@@ -5,17 +5,16 @@
   %span.description Ex: a simple text
 
 .group
-  =f.label :sql_code
-  =f.error_message_on :sql_code
-  =f.text_area :sql_code, :class => :text_area
-  %span.description Ex: a simple text
+  =f.label :code_type
+  =f.error_message_on :code_type
+  =f.text_field :code_type, :class => :text_field
+  %span.description Ex: 'sql' or 'ruby'
 
 .group
-  =f.label :ruby_code
-  =f.error_message_on :ruby_code
-  =f.text_area :ruby_code, :class => :text_area
+  =f.label :code
+  =f.error_message_on :code
+  =f.text_area :code, :class => :text_area
   %span.description Ex: a simple text
-
 
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button
