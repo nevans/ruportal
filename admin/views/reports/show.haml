@@ -1,0 +1,22 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:accounts, :index)
+      %li=link_to pat(:new), url(:accounts, :new)
+  .content
+    %h2.title= @report.name
+    -unless @report.empty?
+      .inner
+        %table.table
+          %tr
+            - @report.columns.each do |col|
+              %th=h col
+          - @report.rows.each do |row|
+            %tr
+              - @report.columns.each do |col|
+                %td=h row[col]
+
+        .actions-bar.wat-cf
+          .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
